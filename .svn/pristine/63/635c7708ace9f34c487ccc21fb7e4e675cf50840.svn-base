@@ -1,0 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using CustomTools;
+
+public class DragBall : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler {
+
+	public void OnBeginDrag(PointerEventData data)
+	{
+		GameObject i = Instantiate (gameObject, gameObject.GetComponent<RectTransform> ().position, transform.rotation) as GameObject;
+		i.transform.SetParent (GameHandler.Instance._designerUI.transform, false);
+		i.GetComponent<RectTransform> ().position = gameObject.GetComponent<RectTransform> ().position;
+	}
+
+	public void OnDrag(PointerEventData data)
+	{
+		ConstantHandler.Instance.ComponentDragged = true;
+		gameObject.GetComponent<RectTransform> ().position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+	}
+
+	public void OnEndDrag(PointerEventData data)
+	{
+		ConstantHandler.Instance.ComponentDragged = false;
+		if (ConstantHandler.Instance.ComponentAdded) {
+			IVector3 pos = ConstantHandler.Instance.PositionAdded;
+			GameHandler.Instance.CreateGameBall (pos.x, pos.y, pos.z);
+			ConstantHandler.Instance.PositionAdded = IVector3.zero;
+			ConstantHandler.Instance.ComponentAdded = false;
+		}
+		Destroy (gameObject);
+	}
+}

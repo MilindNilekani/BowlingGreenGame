@@ -1,0 +1,150 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using CustomTools;
+
+public class DragUI2x2Blocks : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler {
+
+	private GridHandler _grid;
+	public GridHandler.Item _itemType;
+
+	public void OnBeginDrag(PointerEventData data)
+	{
+		GameObject i = Instantiate (gameObject, gameObject.GetComponent<RectTransform> ().position, transform.rotation) as GameObject;
+		i.transform.SetParent (GameHandler.Instance._playerUI.transform, false);
+		i.GetComponent<RectTransform> ().position = gameObject.GetComponent<RectTransform> ().position;
+	}
+
+	void Start()
+	{
+		_grid = GameObject.Find ("Gridhandler").GetComponent<GridHandler> ();
+	}
+
+	public void OnDrag(PointerEventData data)
+	{
+		ConstantHandler.Instance.ComponentDragged = true;
+		gameObject.GetComponent<RectTransform> ().position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+	}
+
+	public void OnEndDrag(PointerEventData data)
+	{
+		ConstantHandler.Instance.ComponentDragged = false;
+		if (ConstantHandler.Instance.ComponentAdded) {
+			IVector3 pos = ConstantHandler.Instance.PositionAdded;
+			if (_grid.GetTileType (pos.x, pos.y,pos.z) == GridHandler.Item.EMPTY) {
+				if (_grid.isOnGrid (pos.x, pos.y,pos.z + 1) && _grid.isOnGrid (pos.x + 1, pos.y,pos.z) && _grid.isOnGrid (pos.x + 1, pos.y,pos.z + 1)
+					&& _grid.GetTileType (pos.x, pos.y,pos.z + 1) == GridHandler.Item.EMPTY && _grid.GetTileType (pos.x + 1, pos.y,pos.z + 1) == GridHandler.Item.EMPTY
+					&& _grid.GetTileType (pos.x + 1, pos.y,pos.z) == GridHandler.Item.EMPTY) {
+					//_grid.SetTileToType (pos.x, pos.y,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x, pos.y+1,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x + 1, pos.y,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x + 1, pos.y+1,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x + 1, pos.y,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x + 1, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.AttachItem (pos.x + 1, pos.y,pos.z);
+					_grid.AttachItem (pos.x + 1, pos.y+1,pos.z);
+					//_grid.AttachItem (pos.x + 1, pos.y,pos.z + 1);
+					//_grid.AttachItem (pos.x + 1, pos.y+1,pos.z + 1);
+					//_grid.AttachItem (pos.x, pos.y,pos.z + 1);
+					//_grid.AttachItem (pos.x, pos.y+1,pos.z + 1);
+					_grid.AttachItem (pos.x, pos.y+1,pos.z);
+					_grid.SetTileToType (pos.x, pos.y,pos.z, _itemType);
+					Debug.Log (pos);
+					_grid.SetDirectionOfTile (pos.x, pos.y,pos.z, GridHandler.ItemDirection.UP);
+					_grid.AttachItem (pos.x, pos.y,pos.z);
+				} else if (_grid.isOnGrid (pos.x, pos.y,pos.z - 1) && _grid.isOnGrid (pos.x + 1, pos.y,pos.z) && _grid.isOnGrid (pos.x + 1, pos.y,pos.z - 1)
+					&& _grid.GetTileType (pos.x, pos.y,pos.z - 1) == GridHandler.Item.EMPTY && _grid.GetTileType (pos.x + 1, pos.y,pos.z - 1) == GridHandler.Item.EMPTY
+					&& _grid.GetTileType (pos.x + 1, pos.y,pos.z) == GridHandler.Item.EMPTY) {
+					//_grid.SetTileToType (pos.x, pos.y,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x, pos.y+1,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x + 1, pos.y,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x + 1, pos.y+1,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x + 1, pos.y,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x + 1, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.AttachItem (pos.x + 1, pos.y,pos.z);
+					_grid.AttachItem (pos.x + 1, pos.y+1,pos.z);
+					//_grid.AttachItem (pos.x + 1, pos.y,pos.z - 1);
+					//_grid.AttachItem (pos.x + 1, pos.y+1,pos.z - 1);
+					//_grid.AttachItem (pos.x, pos.y,pos.z - 1);
+					//_grid.AttachItem (pos.x, pos.y+1,pos.z - 1);
+					_grid.AttachItem (pos.x, pos.y+1,pos.z);
+					_grid.SetTileToType (pos.x, pos.y,pos.z, _itemType);
+					_grid.SetDirectionOfTile (pos.x, pos.y,pos.z, GridHandler.ItemDirection.RIGHT);
+					_grid.AttachItem (pos.x, pos.y,pos.z);
+				} else if (_grid.isOnGrid (pos.x, pos.y,pos.z - 1) && _grid.isOnGrid (pos.x - 1, pos.y,pos.z) && _grid.isOnGrid (pos.x - 1, pos.y,pos.z - 1)
+					&& _grid.GetTileType (pos.x, pos.y,pos.z - 1) == GridHandler.Item.EMPTY && _grid.GetTileType (pos.x - 1, pos.y,pos.z - 1) == GridHandler.Item.EMPTY
+					&& _grid.GetTileType (pos.x - 1, pos.y,pos.z) == GridHandler.Item.EMPTY) {
+					_grid.SetTileToType (pos.x, pos.y,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x, pos.y+1,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x - 1, pos.y,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x - 1, pos.y+1,pos.z - 1, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x - 1, pos.y,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x - 1, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.AttachItem (pos.x - 1, pos.y,pos.z);
+					_grid.AttachItem (pos.x - 1, pos.y+1,pos.z);
+					//_grid.AttachItem (pos.x - 1, pos.y,pos.z - 1);
+					//_grid.AttachItem (pos.x - 1, pos.y+1,pos.z - 1);
+					//_grid.AttachItem (pos.x, pos.y,pos.z - 1);
+					//_grid.AttachItem (pos.x, pos.y+1,pos.z - 1);
+					_grid.AttachItem (pos.x, pos.y+1,pos.z);
+					_grid.SetTileToType (pos.x, pos.y,pos.z, _itemType);
+					_grid.SetDirectionOfTile (pos.x, pos.y,pos.z, GridHandler.ItemDirection.DOWN);
+					_grid.AttachItem (pos.x, pos.y,pos.z);
+				} else if (_grid.isOnGrid (pos.x, pos.y,pos.z + 1) && _grid.isOnGrid (pos.x - 1, pos.y,pos.z) && _grid.isOnGrid (pos.x - 1, pos.y,pos.z + 1)
+					&& _grid.GetTileType (pos.x, pos.y,pos.z + 1) == GridHandler.Item.EMPTY
+					&& _grid.GetTileType (pos.x - 1, pos.y,pos.z + 1) == GridHandler.Item.EMPTY
+					&& _grid.GetTileType (pos.x - 1, pos.y,pos.z) == GridHandler.Item.EMPTY) {
+					//_grid.SetTileToType (pos.x, pos.y,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x, pos.y+1,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x - 1, pos.y,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					//_grid.SetTileToType (pos.x - 1, pos.y+1,pos.z + 1, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x - 1, pos.y,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x - 1, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.SetTileToType (pos.x, pos.y+1,pos.z, GridHandler.Item.DISAPPEAR);
+					_grid.AttachItem (pos.x - 1, pos.y,pos.z);
+					_grid.AttachItem (pos.x - 1, pos.y+1,pos.z);
+					//_grid.AttachItem (pos.x - 1, pos.y,pos.z + 1);
+					//_grid.AttachItem (pos.x - 1, pos.y+1,pos.z + 1);
+					//_grid.AttachItem (pos.x, pos.y,pos.z + 1);
+					//_grid.AttachItem (pos.x, pos.y+1,pos.z + 1);
+					_grid.AttachItem (pos.x, pos.y+1,pos.z);
+					_grid.SetTileToType (pos.x, pos.y,pos.z, _itemType);
+					_grid.SetDirectionOfTile (pos.x, pos.y,pos.z, GridHandler.ItemDirection.LEFT);
+					_grid.AttachItem (pos.x, pos.y,pos.z);
+				}
+			}
+			switch (_itemType) {
+			case GridHandler.Item.FULL_BLOCK:
+				_grid.GetObj (pos.x, pos.y, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x, pos.y, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				_grid.GetObj (pos.x, pos.y+1, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x, pos.y+1, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y+1, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y+1, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				Debug.Log(new Vector3(pos.x,pos.y,pos.z+1) + "activated");
+				break;
+			case GridHandler.Item.HALF_BLOCK_H:
+				_grid.GetObj (pos.x, pos.y, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x, pos.y, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				_grid.GetObj (pos.x, pos.y+1, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x, pos.y+1, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y+1, pos.z + 2).GetComponent<Renderer> ().enabled = true;
+				_grid.GetObj (pos.x+1, pos.y+1, pos.z + 2).GetComponent<SphereCollider> ().enabled = true;
+				Debug.Log(new Vector3(pos.x,pos.y,pos.z+1) + "activated");
+				break;
+			}
+			ConstantHandler.Instance.PositionAdded = IVector3.zero;
+			ConstantHandler.Instance.ComponentAdded = false;
+		}
+		Destroy (gameObject);
+	}
+}

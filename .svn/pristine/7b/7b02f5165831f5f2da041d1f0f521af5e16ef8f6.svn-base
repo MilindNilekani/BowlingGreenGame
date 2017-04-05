@@ -1,0 +1,54 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallCollisionScript : MonoBehaviour {
+
+	private Vector3 velocity;
+	private float speed;
+	private bool _start;
+	private float _speedCheck;
+
+	void Update()
+	{
+		/*if (_start) {
+			Vector3 oldpos = transform.position;
+			if (speed < 0)
+				speed = 0;
+			this.transform.position += velocity * speed * Time.deltaTime;
+			Vector3 newPos = transform.position;
+			_speedCheck = (newPos - oldpos).magnitude / Time.deltaTime;
+		}*/
+	}
+
+	/*void OnCollisionStay(Collision other)
+	{
+		float offset;
+		if (other.gameObject.GetComponentInChildren<BoxCollider>() != null) {
+			if (other.gameObject.GetComponentInChildren<BoxCollider> ().sharedMaterial != null) {
+				offset = other.gameObject.GetComponentInChildren<BoxCollider> ().sharedMaterial.staticFriction * 0.12f;
+				speed -= offset;
+			} else {
+			}
+		}
+		else if (other.gameObject.GetComponentInChildren<MeshCollider> () != null) {
+			offset = other.gameObject.GetComponentInChildren<MeshCollider> ().sharedMaterial.staticFriction * 0.12f;
+			speed -= offset;
+		}
+	}*/
+		
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "BankShot") {
+			Debug.Log ("Bankshot");
+			foreach( ContactPoint contact in other.contacts) 
+			{
+				velocity=Vector3.Reflect(velocity,contact.normal);
+			} 
+		}
+		if (other.gameObject.tag == "Goal") {
+			speed = 0;
+			Debug.Log ("You win");
+		}
+	}
+}

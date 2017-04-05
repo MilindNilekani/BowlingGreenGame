@@ -1,0 +1,33 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallCollisionScript : MonoBehaviour {
+	Vector3 oldVel;
+
+	void Update()
+	{
+		oldVel = GetComponent<Rigidbody> ().velocity;
+	}
+
+	private IEnumerator LossForPlayer()
+	{
+		yield return new WaitForSeconds (0.5f);
+		GameHandler.Instance.Reset ();
+	}
+		
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "Fail") {
+			StartCoroutine (LossForPlayer ());
+		}
+		if (other.gameObject.tag == "BankShot") {
+			Debug.Log ("Hello");
+			ContactPoint cp = other.contacts [0];
+			GetComponent<Rigidbody> ().velocity = Vector3.Reflect (oldVel, cp.normal);
+		}
+		if (other.gameObject.tag == "Goal") {
+			Debug.Log ("You win");
+		}
+	}
+}

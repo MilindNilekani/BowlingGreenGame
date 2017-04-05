@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameHandler.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameHandler.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/GridHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/PuzzletSDK/PuzzletConnection.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/PuzzletSDK/PuzzletKeyDEFAULT.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PrefabHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BallCollisionScript.cs" Line="38" Column="5" />
+      <File FileName="Assets/Scripts/DragUIBankShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RotateItemOnClickBankshOT.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RotateItemOnClickRamp.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DragUIRamp.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UIAddItem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UIAddItemOnOtherItem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DragUI.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

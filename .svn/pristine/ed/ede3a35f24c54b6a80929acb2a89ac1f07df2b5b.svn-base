@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{0ABDB5D9-0789-A836-D049-43327A0C7EAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;UNITY_64;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VIDEO;ENABLE_VR;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\ConnectInitial.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\DisableInApplicationType.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\EnableDelay.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\MacRetinaFullscreenFix.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\NextSceneDelay.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\StandaloneExit.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\UiPlacement.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionScreen\WebLink.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionStatusDisplay\ConnectionStatusDisplay.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\ConnectionStatusDisplay\FirmwareVersionCheck.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Example\ConectionNotification.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Example\DisplayData.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Example\ReloadScene.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Example\StartOnPush.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Example\StopOnPush.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\IPuzzletInterop.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\IPuzzletReceiver.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\MacSerial.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletConnection.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletInteropAndroid.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletInteropIOS.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletInteropUSB.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletKeyDEFAULT.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletManager.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\PuzzletUtility.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\SceneSelect\SceneButton.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\SceneSelect\SceneSelect.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Scripts\Config\CurrentBundleVersion.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Scripts\IsoSnapHelper.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\Scripts\KeepPlaying.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\SerialPort.cs" />
+     <Compile Include="Assets\Plugins\PuzzletSDK\WindowsSerial.cs" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PlaymodeTestsRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="CustomTools">
+ <HintPath>/Users/digitaldreamlabs/Documents/Bowling Green Game/Assets/Plugins/CustomTools.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

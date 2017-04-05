@@ -1,0 +1,23 @@
+0000000000000000000000000000000000000000 a7dc011a3b10616bd3131b0d12863b0d0c93510b MilindNilekani <mnilekan@andrew.cmu.edu> 1487087356 -0500	commit (initial): First commit with Puzzlets SDK
+a7dc011a3b10616bd3131b0d12863b0d0c93510b 35c55b5e2b6f173b3126f6d6970900748c21a79a MilindNilekani <mnilekan@andrew.cmu.edu> 1487118423 -0500	commit: Detecting puzzlets done. Next do orientation and actual physics
+35c55b5e2b6f173b3126f6d6970900748c21a79a 51829ef3210f03b8335b1a2beda03f563a68139c MilindNilekani <mnilekan@andrew.cmu.edu> 1487200018 -0500	commit: New pieces start adding
+51829ef3210f03b8335b1a2beda03f563a68139c da604c88e783fa7f1f9ae5510d0fec49f192edf5 MilindNilekani <mnilekan@andrew.cmu.edu> 1487286740 -0500	commit: Level editor done. Do ball movement and physics. Get tetrahedron from Justin
+da604c88e783fa7f1f9ae5510d0fec49f192edf5 ef448f134f3bd0f96737489e49100dab72180ec9 MilindNilekani <mnilekan@andrew.cmu.edu> 1487288367 -0500	commit: Basic simulation started
+ef448f134f3bd0f96737489e49100dab72180ec9 d57bf367fbcc9ac364c92b3022a987f954f91805 MilindNilekani <mnilekan@andrew.cmu.edu> 1487630157 -0500	commit: Bank shot added. Basic Physics done. Must fix Physics and setup electronmagnetic and spring components.
+d57bf367fbcc9ac364c92b3022a987f954f91805 d5d94da6c7763bf5a01bfbcfe0d747a7e72a37e2 MilindNilekani <mnilekan@andrew.cmu.edu> 1487714236 -0500	commit: Reflection Physics still a bit off.
+d5d94da6c7763bf5a01bfbcfe0d747a7e72a37e2 a2264361cf9f5aa3db80d24ccbab3380e6bef508 MilindNilekani <mnilekan@andrew.cmu.edu> 1487891808 -0500	commit: Basic Level editor Non Puzzlets done.
+a2264361cf9f5aa3db80d24ccbab3380e6bef508 39858d3bf8a2abee8714307175dd85146c9a4823 MilindNilekani <mnilekan@andrew.cmu.edu> 1488232306 -0500	commit: Level editor and physics done. Add dragging and divet to game. Energy trasnfer particle effects.
+39858d3bf8a2abee8714307175dd85146c9a4823 39858d3bf8a2abee8714307175dd85146c9a4823 MilindNilekani <mnilekan@andrew.cmu.edu> 1488235517 -0500	reset: moving to HEAD
+39858d3bf8a2abee8714307175dd85146c9a4823 39858d3bf8a2abee8714307175dd85146c9a4823 MilindNilekani <mnilekan@andrew.cmu.edu> 1488389295 -0500	reset: moving to HEAD
+39858d3bf8a2abee8714307175dd85146c9a4823 39858d3bf8a2abee8714307175dd85146c9a4823 MilindNilekani <mnilekan@andrew.cmu.edu> 1488389629 -0500	reset: moving to HEAD
+39858d3bf8a2abee8714307175dd85146c9a4823 39858d3bf8a2abee8714307175dd85146c9a4823 MilindNilekani <mnilekan@andrew.cmu.edu> 1488389683 -0500	reset: moving to HEAD
+39858d3bf8a2abee8714307175dd85146c9a4823 a81d5c688755c64f321ee3557da6b7b44c110bd8 MilindNilekani <mnilekan@andrew.cmu.edu> 1488407834 -0500	commit: Dragging and get divet in. Springs coming soon
+a81d5c688755c64f321ee3557da6b7b44c110bd8 8f0a36e75ad52be1ad13837cb5b6ff94dc301f2c MilindNilekani <mnilekan@andrew.cmu.edu> 1488488086 -0500	commit: Dragging done
+8f0a36e75ad52be1ad13837cb5b6ff94dc301f2c 8f0a36e75ad52be1ad13837cb5b6ff94dc301f2c MilindNilekani <mnilekan@andrew.cmu.edu> 1488488485 -0500	reset: moving to HEAD
+8f0a36e75ad52be1ad13837cb5b6ff94dc301f2c 5c55bd281805524a96b26501d728536416dbb3cb MilindNilekani <mnilekan@andrew.cmu.edu> 1488496040 -0500	commit: Divet done
+5c55bd281805524a96b26501d728536416dbb3cb 955df5df4342b5b2c37fd832fb29729f1b588cb4 MilindNilekani <mnilekan@andrew.cmu.edu> 1490123526 -0400	commit: Pads and primitives done. Stacking and level editor left
+955df5df4342b5b2c37fd832fb29729f1b588cb4 651ece8a372a044128b1a5807c3bd91df86ab52b MilindNilekani <mnilekan@andrew.cmu.edu> 1490123867 -0400	commit: Primitives done
+651ece8a372a044128b1a5807c3bd91df86ab52b 651ece8a372a044128b1a5807c3bd91df86ab52b MilindNilekani <mnilekan@andrew.cmu.edu> 1490283896 -0400	reset: moving to HEAD
+651ece8a372a044128b1a5807c3bd91df86ab52b 651ece8a372a044128b1a5807c3bd91df86ab52b MilindNilekani <mnilekan@andrew.cmu.edu> 1490285782 -0400	reset: moving to HEAD
+651ece8a372a044128b1a5807c3bd91df86ab52b fb641d16999eb369d0458c29c90f8dd4fc847dbc MilindNilekani <mnilekan@andrew.cmu.edu> 1490474817 -0400	commit: Level editor done. Delete and friction bug to be done
+fb641d16999eb369d0458c29c90f8dd4fc847dbc 467fcf34606da4a07cf2d5dbdc358627997857ef MilindNilekani <mnilekan@andrew.cmu.edu> 1490633646 -0400	commit: Playtesting day tak done
